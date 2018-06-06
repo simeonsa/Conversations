@@ -26,11 +26,11 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
       - run:
-          name: Run Tests
-          command: ./gradlew lint test
-      - run:
           name: build debug package
           command: ./gradlew assembleDebug
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
       - store_artifacts:
           path: build/outputs/apk
           destination: debug apk
